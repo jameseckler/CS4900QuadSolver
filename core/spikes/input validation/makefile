@@ -7,4 +7,6 @@ use:
 	./inputValidation 1 2 t
 	./inputValidation TR342 7.444444444444 fa
 	./inputValidation 1 7 6..5555555555
-	./inputValidation 7fasf 6..5555555555 ^$^$
+	./inputValidation 7fasf 6..5555555555 ^
+	./inputValidation 1 2 3 4
+
