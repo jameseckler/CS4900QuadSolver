@@ -1,0 +1,5 @@
+CFLAGS: -Wall -pedantic -std=c99
+
+gcc version: 5.4.0 or later
+
+All arguments that are passed should be validated before the function is allowed to continue.
