@@ -6,11 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.2] - 2018-11-26
+## [0.0.31] - 2018-11-26
 ### Changed
 - Programming standards to complete guideline set
 
-## [0.0.2] - 2018-11-25
+## [0.0.3] - 2018-11-25
 ### Changed
 - Modularized Quad Solver into three .c files with header files in core build
 - Moved existing documentation to new 'docs' folder
