@@ -26,8 +26,8 @@ Quadratic Equation Solver
 int main(int argc, char *argv[]){
     
     // User inputted argument variables and d
-    float a, b, c;
-    float x1, x2;
+    double a, b, c;
+    double x1, x2;
     
 
     // Checks to ensure there are exactly 3 
@@ -44,21 +44,21 @@ int main(int argc, char *argv[]){
     // validInput 0 (true) | 1 (false)
     int validInput = 0;
 
-    if(sscanf(argv[1], "%f", &a) != 1){
+    if(sscanf(argv[1], "%lf", &a) != 1){
         fprintf(stderr, "Error: %s must be a valid number.\n", argv[1]);
         validInput = 1;
     }
-    if(sscanf(argv[2], "%f", &b) != 1){
+    if(sscanf(argv[2], "%lf", &b) != 1){
         fprintf(stderr, "Error: %s must be a valid number.\n", argv[2]);
         validInput = 1;
     }
-    if(sscanf(argv[3], "%f", &c) != 1){
+    if(sscanf(argv[3], "%lf", &c) != 1){
         fprintf(stderr, "Error: %s must be a valid number.\n", argv[3]);
         validInput = 1;
     }
     if(validInput == 1){return 0;}
 
-    float array[] = {a, b, c};
+    double array[] = {a, b, c};
 
     // Checks for normalized input, nans, and infs
     for(int i = 0; i < 3; i++){
@@ -77,8 +77,8 @@ int main(int argc, char *argv[]){
 
     quadSolverRoots(array, &x1, &x2);
 
-    float x1PlugIn = a*pow(x1, 2) + b*x1 + c;
-    float x2PlugIn = a*pow(x2, 2) + b*x2 + c;
+    double x1PlugIn = a*pow(x1, 2) + b*x1 + c;
+    double x2PlugIn = a*pow(x2, 2) + b*x2 + c;
 
     printf("%f, %f\n", x1, x2);
 

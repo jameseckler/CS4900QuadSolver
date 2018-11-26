@@ -6,20 +6,23 @@
 
 int main() {
 
-	float a, b, c, aScratch, bScratch, cScratch;
-	float x1, x2, x1Scratch, x2Scratch;
+	double a, b, c, aScratch, bScratch, cScratch;
+	double x1, x2, x1Scratch, x2Scratch;
 	int ret;
 	int count;
 	double x;
 	char str[100];
-	float d;
-	float sqrtd;
+	double d;
+	double sqrtd;
+
+
+	printf("Running T2 driver.\n");
 
 	cunit_init();
 
-	x1Scratch = 3.1f;
-	x2Scratch = 3.3f;
-	a = aScratch = 1.0f;
+	x1Scratch = 3.1;
+	x2Scratch = 3.3;
+	a = aScratch = 1.0;
 	b = bScratch = -x1Scratch - x2Scratch;
 	c = cScratch = x1Scratch * x2Scratch;
 
@@ -28,9 +31,14 @@ int main() {
 
 	mockSetupQuadSolverSqrt(d, sqrtd, cunit_dmacheps*2.0*d);
 
-	float arr[] = {a, b, c};
+	double arr[] = {a, b, c};
 
 	ret = quadSolverRoots(arr, &x1, &x2);
+
+	double g = 2.0*cunit_dmacheps*3.3;
+
+	//printf("Rerr: %.40f\n", g);
+	printf("x1,x2: %f %f\n", x1Scratch,x2Scratch);
 	
 	assert_eq("ret", ret, 0);
 	assert_feqrerr("x1", x1, x2Scratch, 2.0*cunit_dmacheps*3.3);
