@@ -9,11 +9,11 @@ all: quadSolver test
 
 test: t1 t2
 
-t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o cunit/cunit.o
-	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o cunit/cunit.o ${LIBS}
+t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o
+	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ${LIBS}
 
-t2: testing/t2.o quadSolverRoots.o cunit/cunit.o testing/mockQuadSolverSqrt.o
-	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o quadSolverSqrt.o cunit/cunit.o testing/mockQuadSolverSqrt.o ${LIBS}
+t2: testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o
+	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o testing/mockQuadSolverSqrt.o ${LIBS}
 
 use:
 	./quadSolver 1 -3 -10
@@ -39,4 +39,4 @@ quadSolverSqrt.o: quadSolverSqrt.h
 quadSolverRoots.o: quadSolverRoots.h quadSolverSqrt.h
 quadSolver.o: quadSolverRoots.h
 testing/mockQuadSolverSqrt.o: testing/mockQuadSolverSqrt.h quadSolverSqrt.h
-cunit/cunit.o: cunit/cunit.h
+testing/cunit.o: testing/cunit.h
