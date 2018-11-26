@@ -103,10 +103,15 @@ int main(int argc, char *argv[]){
     x1 = ((-1 * b) + (sqrtResult)) / aDoubled;
     x2 = ((-1 * b) - (sqrtResult)) / aDoubled;
 
+    float x1PlugIn = a*pow(x1, 2) + b*x1 + c;
+    float x2PlugIn = a*pow(x2, 2) + b*x2 + c;
+
     printf("%f, %f\n", x1, x2);
 
-
-
+    if (x1PlugIn >= 0.000001 || x1PlugIn <= -0.000001)
+	printf("x1 error: %f\n", x1PlugIn);
+    if (x2PlugIn >= 0.000001 || x2PlugIn <= -0.000001)
+	printf("x2 error: %f\n", x2PlugIn);
 
     return 0;
 
