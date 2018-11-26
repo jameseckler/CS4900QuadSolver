@@ -13,7 +13,7 @@ t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o
 	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ${LIBS}
 
 t2: testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o
-	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o testing/mockQuadSolverSqrt.o ${LIBS}
+	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o ${LIBS}
 
 use:
 	./quadSolver 1 -3 -10

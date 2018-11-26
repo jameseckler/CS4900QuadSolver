@@ -33,7 +33,7 @@ void mockSetupQuadSolverSqrt(double lx, double lsqrtx, double leps) {
 /*
 
 */
-double getQuadSolverSqrt(double lx) {
+double quadSolverSqrt(double lx) {
 	if(fabs(ex - lx) > eps) {
 		flag = 1;
 	}
