@@ -1,3 +1,9 @@
+/*
+Purpose: Solves a quadratic equation for given input
+Input: Float array coef with indices 0 = a, 1 = b, and 2 = c; pointers for x1 and x2 so they can be passed back to where the function was called from
+Return: Integer referencing a specific error
+*/
+
 #include <stdio.h>
 #include "quadSolverRoots.h"
 #include "quadSolverSqrt.h"
