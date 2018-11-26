@@ -34,11 +34,6 @@ int main() {
 	double arr[] = {a, b, c};
 
 	ret = quadSolverRoots(arr, &x1, &x2);
-
-	double g = 2.0*cunit_dmacheps*3.3;
-
-	//printf("Rerr: %.40f\n", g);
-	printf("x1,x2: %f %f\n", x1Scratch,x2Scratch);
 	
 	assert_eq("ret", ret, 0);
 	assert_feqrerr("x1", x1, x2Scratch, 2.0*cunit_dmacheps*3.3);
