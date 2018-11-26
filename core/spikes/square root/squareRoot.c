@@ -9,6 +9,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 int main(int argc, char *argv[]){
@@ -28,7 +29,13 @@ int main(int argc, char *argv[]){
 		return 0;
 	}
 
-	printf("%f\n", sqrtf(x));
+	double sqrt = sqrtf(x);
+
+	double sqrtSquared = pow(sqrt, 2);
+
+	double error = abs(sqrtSquared - sqrt);
+
+	printf("Input: %f\nOutput: %f\n(Output)^2: %f\nError: %f\n", x, sqrt, sqrtSquared, error);
 	
 	
 
