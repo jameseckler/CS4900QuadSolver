@@ -5,6 +5,8 @@ LIBS = -lm
 quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o
 	${CC} -o quadSolver quadSolver.o quadSolverRoots.o quadSolverSqrt.o ${LIBS}
 
+all: quadSolver test
+
 test: t1 t2
 
 t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o cunit/cunit.o
@@ -22,9 +24,7 @@ use:
 	./quadSolver
 	./quadSolver 32 4 1
 
-clean-all:
-	make clean
-	make clean-test
+clean-all: clean clean-test
 
 clean:
 	-rm -f ${EXES} core *.log *.o *.exe quadSolver *.tar
