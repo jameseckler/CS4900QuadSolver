@@ -23,40 +23,28 @@ Quadratic Equation Solver
     floating point values and inserting them into a
     quadratic equation to solve with single precision.
 */
+
+int validate(char *in, double *a, double *b, double *c);
+
 int main(int argc, char *argv[]){
     
-    // User inputted argument variables and d
+    // User inputted argument variables
     double a, b, c;
     double x1, x2;
     
+    printf("Input values for a, b, and c separated by spaces: ");
 
-    // Checks to ensure there are exactly 3 
-    // arguments inputted from command line
-    if (argc != 4)  
-    { 
-        fprintf(stderr, "Error: Incorrect number of arguments. ");
-        fprintf(stderr, "Please enter 3 numbers as arguments"); 
-        fprintf(stderr, " (programName arg1 arg2 arg3).\n");
-        return 0; 
-    } 
+    char *in = malloc(sizeof(char)*100);
 
-    // Converts string to floating point and assigns to variable
-    // validInput 0 (true) | 1 (false)
-    int validInput = 0;
+    fgets(in, 100, stdin);
 
-    if(sscanf(argv[1], "%lf", &a) != 1){
-        fprintf(stderr, "Error: %s must be a valid number.\n", argv[1]);
-        validInput = 1;
+    // Exits program if input is not valid
+    if (validate(in, &a, &b, &c) != 0) {
+	fprintf(stderr, "Invalid input: Exiting...\n");
+	exit(1);
     }
-    if(sscanf(argv[2], "%lf", &b) != 1){
-        fprintf(stderr, "Error: %s must be a valid number.\n", argv[2]);
-        validInput = 1;
-    }
-    if(sscanf(argv[3], "%lf", &c) != 1){
-        fprintf(stderr, "Error: %s must be a valid number.\n", argv[3]);
-        validInput = 1;
-    }
-    if(validInput == 1){return 0;}
+
+    free(in);
 
     double array[] = {a, b, c};
 
@@ -83,10 +71,21 @@ int main(int argc, char *argv[]){
     printf("%f, %f\n", x1, x2);
 
     if (x1PlugIn >= 0.000001 || x1PlugIn <= -0.000001)
-	printf("x1 error: %f\n", x1PlugIn);
+	fprintf(stderr, "x1 error: %f\n", x1PlugIn);
     if (x2PlugIn >= 0.000001 || x2PlugIn <= -0.000001)
-	printf("x2 error: %f\n", x2PlugIn);
+	fprintf(stderr, "x2 error: %f\n", x2PlugIn);
 
     return 0;
 
+}
+
+int validate(char *in, double *a, double *b, double *c) {
+
+    char ch;
+
+    if (sscanf(in, "%lf %lf %lf%c", a, b, c, &ch) != 4) {
+        return 1;
+    }
+
+    return 0;
 }
