@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../cunit/cunit.h"
+#include "cunit.h"
 #include "mockQuadSolverSqrt.h"
 #include "../quadSolverRoots.h"
 
@@ -20,8 +20,8 @@ int main() {
 	x1Scratch = 3.1f;
 	x2Scratch = 3.3f;
 	a = aScratch = 1.0f;
-	b = bScratch = -x1 - x2;
-	c = cScratch = x1 * x2;
+	b = bScratch = -x1Scratch - x2Scratch;
+	c = cScratch = x1Scratch * x2Scratch;
 
 	d = b*b - 4.0*a*c;
 	sqrtd = sqrt(d);

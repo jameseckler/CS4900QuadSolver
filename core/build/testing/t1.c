@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "../cunit/cunit.h"
+#include "cunit.h"
 #include "../quadSolverRoots.h"
 
 int main() {
