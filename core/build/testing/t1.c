@@ -3,14 +3,14 @@
 #include "../quadSolverRoots.h"
 
 int main() {
-	float x1 = 3.1f;
-	float x1Copy;
-	float x2 = 3.3f;
-	float x2Copy;
-	float a = 1.0f;
-	float b = -x1 - x2;
-	float c = x1*x2;
-	float arr[] = {a, b, c};
+	double x1 = 3.1f;
+	double x1Copy;
+	double x2 = 3.3f;
+	double x2Copy;
+	double a = 1.0f;
+	double b = -x1 - x2;
+	double c = x1*x2;
+	double arr[] = {a, b, c};
 	int ret;
 
 	cunit_init();

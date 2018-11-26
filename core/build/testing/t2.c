@@ -15,9 +15,6 @@ int main() {
 	double d;
 	double sqrtd;
 
-
-	printf("Running T2 driver.\n");
-
 	cunit_init();
 
 	x1Scratch = 3.1;
