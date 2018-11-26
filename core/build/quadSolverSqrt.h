@@ -1,0 +1,1 @@
+double quadSolverSqrt(double x);

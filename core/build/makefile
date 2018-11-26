@@ -1,5 +1,9 @@
-all:
-	gcc -Wall -Wpedantic -std=c99 -g quadSolver.c -o quadSolver -lm
+CFLAGS = -Wall -pedantic -std=c99
+CC = gcc
+LIBS = -lm
+
+quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o
+	${CC} -o quadSolver quadSolver.o quadSolverRoots.o quadSolverSqrt.o ${LIBS}
 
 use:
 	./quadSolver 1 -3 -10
@@ -9,3 +13,12 @@ use:
 	./quadSolver 2 4 
 	./quadSolver
 	./quadSolver 32 4 1
+
+clean:
+	-rm -f ${EXES} core *.log *.o *.exe quadSolver *.tar
+
+#Dependencies
+
+quadSolverSqrt.o: quadSolverSqrt.h
+quadSolverRoots.o: quadSolverRoots.h quadSolverSqrt.h
+quadSolver.o: quadSolverRoots.h

@@ -5,6 +5,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <math.h>
+#include "quadSolverRoots.h"
 
 /*
 Joshua Peterson and James Eckler
@@ -25,10 +26,7 @@ Quadratic Equation Solver
 int main(int argc, char *argv[]){
     
     // User inputted argument variables and d
-    float a, b, c, d;
-    // Floats used for calculation
-    float bSquared, aMult, aDoubled;
-    float sqrtResult;
+    float a, b, c;
     float x1, x2;
     
 
@@ -77,31 +75,7 @@ int main(int argc, char *argv[]){
         }
     }
 
-    d = b * b - 4 * a * c;
-
-    if(d < 0){
-        fprintf(stderr, "Roots are complex numbers.\n");
-        fprintf(stderr, "Roots of quadratic equation are: \n");
-        fprintf(stderr, "%.3f%+.3fi",-b/(2*a),sqrt(-d)/(2*a));
-        fprintf(stderr, ", %.3f%+.3fi\n",-b/(2*a),-sqrt(-d)/(2*a));
-
-        return 0;
-    }
-
-    bSquared = b * b;
-    //printf("%f\n", bSquared);
-    aMult = 4 * a * c;
-    //printf("%f\n", aMult);
-    aDoubled = 2 * a;
-    //printf("%f\n", aDoubled);
-
-    sqrtResult = bSquared - aMult;
-    //printf("%f\n", sqResult);
-    sqrtResult = sqrtf(sqrtResult);
-    //printf("%f\n", sqResult);
-
-    x1 = ((-1 * b) + (sqrtResult)) / aDoubled;
-    x2 = ((-1 * b) - (sqrtResult)) / aDoubled;
+    quadSolverRoots(array, &x1, &x2);
 
     float x1PlugIn = a*pow(x1, 2) + b*x1 + c;
     float x2PlugIn = a*pow(x2, 2) + b*x2 + c;
