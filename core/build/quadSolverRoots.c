@@ -8,15 +8,15 @@ Return: Integer referencing a specific error
 #include "quadSolverRoots.h"
 #include "quadSolverSqrt.h"
 
-int quadSolverRoots(float *coef, float *x1, float *x2) {
+int quadSolverRoots(double *coef, double *x1, double *x2) {
 
-	float a = coef[0];
-	float b = coef[1];
-	float c = coef[2];
+	double a = coef[0];
+	double b = coef[1];
+	double c = coef[2];
 
-	float bSquared, aMult, aDoubled;
-	float sqrtResult;
-	float d = b * b - 4 * a * c;
+	double bSquared, aMult, aDoubled;
+	double sqrtResult;
+	double d = b * b - 4 * a * c;
 
 	if(d < 0){
 	        fprintf(stderr, "Roots are complex numbers.\n");

@@ -1,1 +1,1 @@
-int quadSolverRoots(float *coef, float *x1, float *x2);
+int quadSolverRoots(double *coef, double *x1, double *x2);
