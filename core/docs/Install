@@ -1,0 +1,6 @@
+HOW TO INSTALL:
+	In the directory 'CS4900QuadSolver/core/build', run the command `./configure`.
+	After this, run `make`, then `sudo make install`.
+
+HOW TO UNINSTALL:
+	In the directory 'CS4900QuadSolver/core/build', run the command `sudo make uninstall`.
