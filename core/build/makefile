@@ -8,7 +8,7 @@ LIBS = -lm
 quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o
 	${CC} -o quadSolver quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o ${LIBS}
 
-all: quadSolver test
+all: quadSolver test log
 
 test: t1 t2
 
