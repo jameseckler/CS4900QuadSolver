@@ -45,8 +45,8 @@ int main(int argc, char *argv[]){
     int validated = 0;
     int success = 0;
     double array[3];
-    Line    linein;
-    Coef    input;
+    Line linein;
+    Coef input;
 
     linein.max = MAXLINE;
     if( (linein.str = malloc(MAXLINE)) == NULL)  {

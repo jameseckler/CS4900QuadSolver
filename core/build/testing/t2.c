@@ -6,7 +6,7 @@
 
 int main() {
 
-	double a, b, c, aScratch, bScratch, cScratch;
+	double aScratch, bScratch, cScratch;
 	double x1, x2, x1Scratch, x2Scratch;
 	int ret;
 	int count;
@@ -14,23 +14,22 @@ int main() {
 	char str[100];
 	double d;
 	double sqrtd;
+	Coef input;
 
 	cunit_init();
 
 	x1Scratch = 3.1;
 	x2Scratch = 3.3;
-	a = aScratch = 1.0;
-	b = bScratch = -x1Scratch - x2Scratch;
-	c = cScratch = x1Scratch * x2Scratch;
+	input.a = aScratch = 1.0;
+	input.b = bScratch = -x1Scratch - x2Scratch;
+	input.c = cScratch = x1Scratch * x2Scratch;
 
-	d = b*b - 4.0*a*c;
+	d = input.b*input.b - 4.0*input.a*input.c;
 	sqrtd = sqrt(d);
 
 	mockSetupQuadSolverSqrt(d, sqrtd, cunit_dmacheps*2.0*d);
 
-	double arr[] = {a, b, c};
-
-	ret = quadSolverRoots(arr, &x1, &x2);
+	ret = quadSolverRoots(&input, &x1, &x2);
 	
 	assert_eq("ret", ret, 0);
 	assert_feqrerr("x1", x1, x2Scratch, 2.0*cunit_dmacheps*3.3);
