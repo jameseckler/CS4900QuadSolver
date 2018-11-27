@@ -5,8 +5,8 @@ CFLAGS = -Wall -pedantic -std=c99
 CC = gcc
 LIBS = -lm
 
-quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o
-	${CC} -o quadSolver quadSolver.o quadSolverRoots.o quadSolverSqrt.o ${LIBS}
+quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o
+	${CC} -o quadSolver quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o ${LIBS}
 
 all: quadSolver test
 
