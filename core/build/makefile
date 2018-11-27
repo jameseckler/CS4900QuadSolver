@@ -25,8 +25,10 @@ log: ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o
 	../src/logging/logger
 
 use:
-	./quadSolver < in.txt > out.txt
-	diff out.txt expectedOut.txt
+	./quadSolver < testing/in.txt > testing/out.txt
+	diff testing/out.txt testing/expectedOut.txt
+	./quadSolver < testing/in2.txt > testing/out2.txt
+	diff testing/out2.txt testing/expectedOut2.txt
 
 clean-all: clean clean-test clean-log
 
