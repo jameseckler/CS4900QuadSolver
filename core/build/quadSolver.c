@@ -71,7 +71,7 @@ int main(int argc, char *argv[]){
 
                 printf("****************************************************\n");
                 printf("* Input values for a, b, and c separated by spaces *\n");
-                printf("*             Type 'q' to quit program             *\n");
+                printf("*             Type 'quit' to quit program             *\n");
                 printf("****************************************************\n");
                 printf("> ");
 
@@ -83,8 +83,8 @@ int main(int argc, char *argv[]){
                    exit(1);
                 }
 
-                if( (strcmp(linein.str, "q")) == 0){
-                  printf("hey");
+                if( strncmp(linein.str, "quit", 4) == 0){
+                    exit(0);
                 }
 
                 // Exits program if input is not valid
