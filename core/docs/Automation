@@ -1,0 +1,8 @@
+The makefile can be found in "core/build".
+
+`make` will make an executable version of the quadSolver program. `make clean` will clean everything involving the quadSolver executable.
+
+`make test` will compile all tests involved with the program. `make [testname]` can be used to compile individual tests and `make test-clean` will clean every test. These tests will be in "core/build/testing".
+
+`make install` will install the quadSolver program so it need not be run from the build directory. Instructions on installation can be found in the Install documentatio.
+`make uninstall` will uninstall the program.

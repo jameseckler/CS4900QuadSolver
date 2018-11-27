@@ -1,0 +1,5 @@
+All testing materials will be saved in "core/build/testing".
+
+Tests should be written for all new modules in a way where they can be tested on their own.
+
+Changes should not be pushed if they do not pass all tests.

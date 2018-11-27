@@ -1,0 +1,5 @@
+Version control will be handled with Git.
+
+Git repository: https://github.com/jameseckler/CS4900QuadSolver
+
+Local changes should be made on a branch of master. Pushed changes must pass all tests before merging with master.

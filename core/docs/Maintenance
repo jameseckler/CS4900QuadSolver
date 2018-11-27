@@ -1,0 +1,1 @@
+If problems are encountered while using the program, you can run the program using `quadSolver -l` to enable logging. When notifying someone about a problem with quadSolver, you should give them the log file from "core/src/logging" with the input you used while encountering the problem.

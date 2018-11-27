@@ -1,0 +1,9 @@
+quadSolver: The main program, prompts a user for a, b, and c from a quadratic equation and gives the roots from the given input
+
+quadSolverRoots: Executes the appropriate functions for quadSolver to get the roots
+
+quadSolverSqrt: A wrapper for the square root function used in quadSolverRoots
+
+Testing programs can be found in "core/build/testing"
+
+Logging can be found in "core/src/logging"
