@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <math.h>
 #include "quadSolverRoots.h"
+#include "../src/logging/logger.h"
 
 /*
 Joshua Peterson and James Eckler
@@ -31,20 +32,27 @@ int main(int argc, char *argv[]){
     // User inputted argument variables
     double a, b, c;
     double x1, x2;
-    
-    printf("Input values for a, b, and c separated by spaces: ");
+    int success = 0;
 
-    char *in = malloc(sizeof(char)*100);
+    while(success == 0){
 
-    fgets(in, 100, stdin);
+        printf("Input values for a, b, and c separated by spaces: ");
 
-    // Exits program if input is not valid
-    if (validate(in, &a, &b, &c) != 0) {
-	fprintf(stderr, "Invalid input: Exiting...\n");
-	exit(1);
+        char *in = malloc(sizeof(char)*100);
+
+        fgets(in, 100, stdin);
+
+        // Exits program if input is not valid
+        if (validate(in, &a, &b, &c) != 0) {
+    	   fprintf(stderr, "\n***Invalid input, enter 3 valid numbers separated by spaces***\n\n");
+        }else{
+            success = 1;
+        }
+
+
+        free(in);
+
     }
-
-    free(in);
 
     double array[] = {a, b, c};
 
@@ -84,6 +92,7 @@ int validate(char *in, double *a, double *b, double *c) {
     char ch;
 
     if (sscanf(in, "%lf %lf %lf%c", a, b, c, &ch) != 4) {
+        LOG_PRINT("%s", a);
         return 1;
     }
 

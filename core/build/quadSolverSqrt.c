@@ -6,6 +6,7 @@ Output: Square root of double x
 
 #include <math.h>
 #include "quadSolverSqrt.h"
+#include "../src/logging/logger.h"
 
 double quadSolverSqrt(double x) {
 
