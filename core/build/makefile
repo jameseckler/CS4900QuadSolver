@@ -11,6 +11,8 @@ quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logge
 all: quadSolver test log
 
 test: t1 t2
+	testing/t1
+	testing/t2
 
 t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o
 	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ${LIBS}
@@ -23,13 +25,8 @@ log: ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o
 	../src/logging/logger
 
 use:
-	./quadSolver 1 -3 -10
-	./quadSolver 1 -5 -6
-	./quadSolver 1 7 6
-	./quadSolver t3 g 5
-	./quadSolver 2 4 
-	./quadSolver
-	./quadSolver 32 4 1
+	./quadSolver < in.txt > out.txt
+	diff out.txt expectedOut.txt
 
 clean-all: clean clean-test clean-log
 
