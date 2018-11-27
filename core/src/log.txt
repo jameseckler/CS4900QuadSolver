@@ -1,0 +1,1 @@
+[Mon Nov 26 17:34:21 2018] [quadSolver.c][line: 95] à¢Ýÿ

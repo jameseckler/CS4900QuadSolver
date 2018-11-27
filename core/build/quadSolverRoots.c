@@ -7,6 +7,7 @@ Return: Integer referencing a specific error
 #include <stdio.h>
 #include "quadSolverRoots.h"
 #include "quadSolverSqrt.h"
+#include "../src/logging/logger.h"
 
 int quadSolverRoots(double *coef, double *x1, double *x2) {
 

@@ -18,6 +18,10 @@ t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o
 t2: testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o
 	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o ${LIBS}
 
+log: ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o
+	${CC} -o ../src/logging/logger ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o ${LIBS}
+	../src/logging/logger
+
 use:
 	./quadSolver 1 -3 -10
 	./quadSolver 1 -5 -6
@@ -27,7 +31,7 @@ use:
 	./quadSolver
 	./quadSolver 32 4 1
 
-clean-all: clean clean-test
+clean-all: clean clean-test clean-log
 
 clean:
 	-rm -f ${EXES} core *.log *.o *.exe quadSolver *.tar
@@ -35,6 +39,10 @@ clean:
 clean-test:
 	-rm -f ${EXES} core testing/*.log testing/*.o testing/*.exe \
 	testing/t1 testing/t2 *.tar
+
+clean-log:
+	-rm -f ${EXES} core ../src/logging/*.log ../src/logging/*.o ../src/logging/*.exe \
+	../src/logging/logger *.tar ../src/log.txt
 
 PREFIX = /usr/local
 
@@ -54,3 +62,4 @@ quadSolverRoots.o: quadSolverRoots.h quadSolverSqrt.h
 quadSolver.o: quadSolverRoots.h
 testing/mockQuadSolverSqrt.o: testing/mockQuadSolverSqrt.h quadSolverSqrt.h
 testing/cunit.o: testing/cunit.h
+../src/logging/logger.o: ../src/logging/logger.h
