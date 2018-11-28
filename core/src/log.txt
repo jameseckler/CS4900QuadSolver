@@ -1,0 +1,46 @@
+[Tue Nov 27 17:54:53 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 431
+
+[Tue Nov 27 17:54:53 2018] [quadSolver.c][line: 92] User input could not be validated: 431
+
+[Tue Nov 27 17:54:53 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 
+
+[Tue Nov 27 17:54:53 2018] [quadSolver.c][line: 92] User input could not be validated: 
+
+[Tue Nov 27 17:54:53 2018] [quadSolver.c][line: 161] Initial user input error. Arguments:  3
+
+[Tue Nov 27 17:54:53 2018] [quadSolver.c][line: 92] User input could not be validated:  3
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 161] Initial user input error. Arguments:  5
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 92] User input could not be validated:  5
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 3 
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 92] User input could not be validated: 3 
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 53
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 92] User input could not be validated: 53
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 5
+
+[Tue Nov 27 17:54:54 2018] [quadSolver.c][line: 92] User input could not be validated: 5
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 325 35
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 92] User input could not be validated: 325 35
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 3
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 92] User input could not be validated: 3
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 53
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 92] User input could not be validated: 53
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 161] Initial user input error. Arguments: 
+
+[Tue Nov 27 17:54:55 2018] [quadSolver.c][line: 92] User input could not be validated: 
+
+[Tue Nov 27 17:54:56 2018] [quadSolver.c][line: 84] User manually exited program with quit
+

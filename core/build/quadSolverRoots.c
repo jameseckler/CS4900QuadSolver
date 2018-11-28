@@ -25,6 +25,9 @@ int quadSolverRoots(Coef *input, double *x1, double *x2) {
 	        fprintf(stderr, "%.3f%+.3fi",-b/(2*a),quadSolverSqrt(-d)/(2*a));
 	        fprintf(stderr, ", %.3f%+.3fi\n",-b/(2*a),-quadSolverSqrt(-d)/(2*a));
 
+	        LOG_PRINT("Roots are complex numbers: %f, %f", &x1, &x2);
+	        LOG_PRINT("Attempt to square root: %f", d);
+
 		return -1;
 	}
 

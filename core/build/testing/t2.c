@@ -3,6 +3,7 @@
 #include "cunit.h"
 #include "mockQuadSolverSqrt.h"
 #include "../quadSolverRoots.h"
+#include "../../src/logging/logger.h"
 
 int main() {
 

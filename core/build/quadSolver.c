@@ -31,8 +31,6 @@ Quadratic Equation Solver
 //X Line is a structure for passing a line of text, and a code for status
 typedef struct {
   int   max;   // size of str array
-  int   len;   // legnth of string in str
-  int   code;  // status code
   char  *str;  // pointer to array of max bytes
 }  Line;
 
@@ -51,10 +49,9 @@ int main(int argc, char *argv[]){
     linein.max = MAXLINE;
     if( (linein.str = malloc(MAXLINE)) == NULL)  {
       fprintf(stderr,"Systems failure no memory for malloc(%d)\n", MAXLINE);
+      LOG_PRINT("System failure, could not allocate 100 bytes for input.");
       exit(1); 
     }
-    linein.len=0;
-    linein.code=-1;
 
     while(1){
 
@@ -71,7 +68,7 @@ int main(int argc, char *argv[]){
 
                 printf("****************************************************\n");
                 printf("* Input values for a, b, and c separated by spaces *\n");
-                printf("*             Type 'quit' to quit program             *\n");
+                printf("*             Type 'quit' to quit program          *\n");
                 printf("****************************************************\n");
                 printf("> ");
 
@@ -84,12 +81,15 @@ int main(int argc, char *argv[]){
                 }
 
                 if( strncmp(linein.str, "quit", 4) == 0){
+                    LOG_PRINT("User manually exited program with %s", linein.str);
                     exit(0);
                 }
 
                 // Exits program if input is not valid
                 if (validate(&linein, &input) != 0) {
-            	   fprintf(stderr, "\n\n***Invalid input, enter 3 valid numbers separated by spaces***\n\n\n");
+            	   fprintf(stderr, "\n\n\n***Invalid input, "
+                    "enter 3 valid numbers separated by spaces***\n\n\n\n");
+                   LOG_PRINT("User input could not be validated: %s", linein.str);
                    validated = 0;
                 }
             }
@@ -99,28 +99,28 @@ int main(int argc, char *argv[]){
             // Checks for normalized input, nans, and infs
                 for(int i = 0; i < 3; i++){
                     if(isnormal(array[i]) == 0){
-                        fprintf(stderr, "Error: Argument %d of input: %s is not a normalized number\n"
+                        fprintf(stderr, "Error: Argument %d of "
+                            "input: %s is not a normalized number\n"
                             , i+1, linein.str);
-                        LOG_PRINT("User input contains a denormalized number. Arguments: %s", linein.str);
+                        LOG_PRINT("Input contains denormalized number: %s", linein.str);
                         success = 0;
                     }else if(isnan(array[i]) != 0){
-                        fprintf(stderr, "Error: Argument %d of input: %s is not a number\n", i+1, linein.str);
-                        LOG_PRINT("User input contains a nan. Arguments: %s", linein.str);
+                        fprintf(stderr, "Error: Argument %d of "
+                            "input: %s is not a number\n", i+1, linein.str);
+                        LOG_PRINT("Input contains a nan: %s", linein.str);
                         success = 0;
                     }else if(isinf(array[i]) != 0){
-                        fprintf(stderr, "Error: Argument %d of input: %s is infinity\n", i+1, linein.str);
-                        LOG_PRINT("User input contains infinity. Arguments: %s", linein.str);
+                        fprintf(stderr, "Error: Argument %d of "
+                            "input: %s is infinity\n", i+1, linein.str);
+                        LOG_PRINT("Input contains infinity: %s", linein.str);
                         success = 0;
                     }
                 }
             
-            free(linein.str);
             printf("\n");
         }
     
-    if( (quadSolverRoots(&input, &x1, &x2)) == -1){
-        //LOG_PRINT("Roots are complex numbers: %d, %d", linein.str);
-    }else{
+    if( (quadSolverRoots(&input, &x1, &x2)) != -1){
         printf("Roots (x1, x2): %f, %f\n", x1, x2);
     }
 
@@ -131,14 +131,18 @@ int main(int argc, char *argv[]){
 
     if (x1PlugIn >= 0.000001 || x1PlugIn <= -0.000001){
 	   fprintf(stderr, "x1 error: %f\n", x1PlugIn);
+       LOG_PRINT("x1 error: %f, with input: %s", x1PlugIn, linein.str);
     }
     if (x2PlugIn >= 0.000001 || x2PlugIn <= -0.000001){
 	   fprintf(stderr, "x2 error: %f\n", x2PlugIn);
+       LOG_PRINT("x2 error: %f, with input: %s", x2PlugIn, linein.str);
     }
 
     printf("\n\n");
     success = 0;
     validated = 0;
+
+    free(linein.str);
 
     }
 

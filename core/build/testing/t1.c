@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "cunit.h"
 #include "../quadSolverRoots.h"
+#include "../../src/logging/logger.h"
 
 int main() {
 	double x1 = 3.1f;
