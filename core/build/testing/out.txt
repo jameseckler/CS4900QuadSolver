@@ -14,10 +14,70 @@ Roots (x1, x2): 0.618034, -1.618034
 
 
 ****************************************************
-*                                                  *
-*               Quadratic Solver                   *
-*                                                  *
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
 ****************************************************
+> 
+
+
+
+****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> 
+Coefficients: 2.000000 7.000000 3.000000
+Roots (x1, x2): -0.500000, -3.000000
+
+
+
+****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> 
+
+
+
+****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> 
+
+
+
+****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> 
+Coefficients: -5.000000 53.000000 0.350000
+Roots (x1, x2): -0.006600, 10.606600
+
+
+
+****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> ****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> ****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> ****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> ****************************************************
+* Input values for a, b, and c separated by spaces *
+*             Type 'quit' to quit program          *
+****************************************************
+> ****************************************************
 * Input values for a, b, and c separated by spaces *
 *             Type 'quit' to quit program          *
 ****************************************************

@@ -53,14 +53,14 @@ int main(int argc, char *argv[]){
       exit(1); 
     }
 
-    printf("\n****************************************************\n");
-    printf("*                                                  *\n");
-    printf("*               Quadratic Solver                   *\n");
-    printf("*                                                  *\n");
-
     while(1){
 
         while(success == 0){
+
+            printf("\n****************************************************\n");
+            printf("*                                                  *\n");
+            printf("*               Quadratic Solver                   *\n");
+            printf("*                                                  *\n");
 
             success = 1;
 
@@ -75,9 +75,9 @@ int main(int argc, char *argv[]){
                 validated = 1;
 
                 if(fgets(linein.str, linein.max, stdin) == NULL) {
-                   printf("%s", linein.str);
-                   fprintf(stderr,"Input error: cannot read from stdin\n");
+                   fprintf(stderr,"Input error: can not read from stdin\n");
                    LOG_PRINT("Input cannot be read from stdin: %s", linein.str);
+                   exit(1);
                 }
 
                 if( strncmp(linein.str, "quit", 4) == 0){
@@ -139,7 +139,7 @@ int main(int argc, char *argv[]){
        LOG_PRINT("x2 error: %f, with input: %s", x2PlugIn, linein.str);
     }
 
-    printf("\n\n\n");
+    printf("\n\n");
     success = 0;
     validated = 0;
 

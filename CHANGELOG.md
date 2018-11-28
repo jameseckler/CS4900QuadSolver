@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2018-11-26
+### Changed
+	- Input method changed to use structs and fgets from stdin
+	- Makefile updated to reflect new dependencies
+
+### Added
+	- Loopable interface
+	- Graphical interface
+	- Structures for holding coefficients and lines
+	- Updated spikes folder to reflect current status
+	- Logging system added
+	- Installation system added along with documentation
+	- Documentation added for several topics
+	
 ## [0.0.31] - 2018-11-26
 ### Changed
 - Programming standards to complete guideline set

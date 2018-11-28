@@ -1,2 +1,16 @@
-[Tue Nov 27 18:44:57 2018] [quadSolver.c][line: 84] User manually exited program with quit
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 2 4242
+
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 2 4242
+
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 4
+
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 4
+
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 2
+
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 2
+
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 25
+
+[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 25
 

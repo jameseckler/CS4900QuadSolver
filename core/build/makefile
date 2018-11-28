@@ -24,6 +24,9 @@ log: ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o
 	${CC} -o ../src/logging/logger ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o ${LIBS}
 	../src/logging/logger
 
+tar:
+	tar --exclude='quadSolver.tar.gz' -czvf quadSolver.tar.gz ../
+
 use:
 	./quadSolver < testing/in.txt > testing/out.txt
 	diff testing/out.txt testing/expectedOut.txt
