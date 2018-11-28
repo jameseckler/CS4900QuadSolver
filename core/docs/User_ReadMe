@@ -1,2 +1,5 @@
-HOW TO RUN PROGRAM:
+HOW TO RUN PROGRAM WITHOUT INSTALL:
+	Navigate to the 'build' folder and type 'make'. This will compile the code into an object called 'quadSolver'. Type ./quadSolver to execute. When prompted, enter three numbers representing a, b, and c respectively. These should all be seperated by spaces.
+
+HOW TO RUN PROGRAM WITH INSTALL:
 	After installation, simply enter `quadSolver`. When prompted, enter three numbers representing a, b, and c respectively. These should all be seperated by spaces.

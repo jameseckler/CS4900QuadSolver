@@ -14,15 +14,18 @@ test: t1 t2
 	testing/t1
 	testing/t2
 
-t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o
-	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ${LIBS}
+t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ../src/logging/logger.o
+	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ../src/logging/logger.o ${LIBS}
 
 t2: testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o
-	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o ${LIBS}
+	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o ../src/logging/logger.o ${LIBS}
 
 log: ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o
-	${CC} -o ../src/logging/logger ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o ${LIBS}
+	${CC} -o ../src/logging/logger ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o ${LIBS}
 	../src/logging/logger
+
+tar:
+	tar --exclude='quadSolver.tar.gz' -czvf quadSolver.tar.gz ../
 
 use:
 	./quadSolver < testing/in.txt > testing/out.txt
@@ -57,8 +60,8 @@ uninstall:
 #Dependencies
 
 quadSolverSqrt.o: quadSolverSqrt.h
-quadSolverRoots.o: quadSolverRoots.h quadSolverSqrt.h
-quadSolver.o: quadSolverRoots.h
+quadSolverRoots.o: quadSolverRoots.h quadSolverSqrt.h ../src/logging/logger.h
+quadSolver.o: quadSolverRoots.h ../src/logging/logger.h
 testing/mockQuadSolverSqrt.o: testing/mockQuadSolverSqrt.h quadSolverSqrt.h
 testing/cunit.o: testing/cunit.h
 ../src/logging/logger.o: ../src/logging/logger.h
