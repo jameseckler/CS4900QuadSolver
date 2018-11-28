@@ -9,11 +9,11 @@ Return: Integer referencing a specific error
 #include "quadSolverSqrt.h"
 #include "../src/logging/logger.h"
 
-int quadSolverRoots(double *coef, double *x1, double *x2) {
+int quadSolverRoots(Coef *input, double *x1, double *x2) {
 
-	double a = coef[0];
-	double b = coef[1];
-	double c = coef[2];
+	double a = input->a;
+	double b = input->b;
+	double c = input->c;
 
 	double bSquared, aMult, aDoubled;
 	double sqrtResult;

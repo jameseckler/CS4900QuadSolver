@@ -1,8 +1,0 @@
-[Mon Nov 26 18:49:58 2018] [quadSolver.c][line: 103] Initial user input error. Arguments: jim 1 2
-
-[Mon Nov 26 18:49:58 2018] [quadSolver.c][line: 63] User input contains a denormalized number. Arguments: jim 1 2
-
-[Mon Nov 26 18:49:58 2018] [quadSolver.c][line: 63] User input contains a denormalized number. Arguments: jim 1 2
-
-[Mon Nov 26 18:49:58 2018] [quadSolver.c][line: 63] User input contains a denormalized number. Arguments: jim 1 2
-
