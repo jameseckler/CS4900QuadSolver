@@ -1,0 +1,6 @@
+[Tue Nov 27 22:19:02 2018] [quadSolverRoots.c][line: 28] Roots are complex numbers: -0.083333, -0.276385
+[Tue Nov 27 22:19:02 2018] [quadSolverRoots.c][line: 29] Attempt to square root: -44.000000
+[Tue Nov 27 22:19:02 2018] [quadSolver.c][line: 135] x1 error: 1.000000, with input: 12 2 1
+
+[Tue Nov 27 22:19:02 2018] [quadSolver.c][line: 139] x2 error: 1.000000, with input: 12 2 1
+

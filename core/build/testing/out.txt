@@ -44,12 +44,6 @@ Roots (x1, x2): -0.500000, -3.000000
 *             Type 'quit' to quit program          *
 ****************************************************
 > 
-=======
-* Input values for a, b, and c separated by spaces *
-*             Type 'quit' to quit program             *
-****************************************************
-> 
-Roots (x1, x2): 0.618034, -1.618034
 
 
 
@@ -86,11 +80,5 @@ Roots (x1, x2): -0.006600, 10.606600
 > ****************************************************
 * Input values for a, b, and c separated by spaces *
 *             Type 'quit' to quit program          *
-*                                                  *
-*               Quadratic Solver                   *
-*                                                  *
-****************************************************
-* Input values for a, b, and c separated by spaces *
-*             Type 'quit' to quit program             *
 ****************************************************
 > 
