@@ -121,6 +121,7 @@ int main(int argc, char *argv[]){
         }
     
     if( (quadSolverRoots(&input, &x1, &x2)) != -1){
+        printf("Coefficients: %f %f %f\n", input.a,input.b,input.c);
         printf("Roots (x1, x2): %f, %f\n", x1, x2);
     }
 
@@ -130,11 +131,11 @@ int main(int argc, char *argv[]){
 
 
     if (x1PlugIn >= 0.000001 || x1PlugIn <= -0.000001){
-	   fprintf(stderr, "x1 error: %f\n", x1PlugIn);
+	   fprintf(stderr, "\nx1 error: %f\n", x1PlugIn);
        LOG_PRINT("x1 error: %f, with input: %s", x1PlugIn, linein.str);
     }
     if (x2PlugIn >= 0.000001 || x2PlugIn <= -0.000001){
-	   fprintf(stderr, "x2 error: %f\n", x2PlugIn);
+	   fprintf(stderr, "x2 error: %f\n\n", x2PlugIn);
        LOG_PRINT("x2 error: %f, with input: %s", x2PlugIn, linein.str);
     }
 

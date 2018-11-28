@@ -21,7 +21,7 @@ int quadSolverRoots(Coef *input, double *x1, double *x2) {
 
 	if(d < 0){
 	        fprintf(stderr, "Roots are complex numbers.\n");
-	        fprintf(stderr, "Roots of quadratic equation are: \n");
+	        fprintf(stderr, "\nRoots of quadratic equation are: \n");
 	        fprintf(stderr, "%.3f%+.3fi",-b/(2*a),quadSolverSqrt(-d)/(2*a));
 	        fprintf(stderr, ", %.3f%+.3fi\n",-b/(2*a),-quadSolverSqrt(-d)/(2*a));
 
