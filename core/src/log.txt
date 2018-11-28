@@ -1,2 +1,2 @@
-[Tue Nov 27 18:21:28 2018] [quadSolver.c][line: 84] User manually exited program with quit
+[Tue Nov 27 18:44:57 2018] [quadSolver.c][line: 84] User manually exited program with quit
 

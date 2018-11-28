@@ -5,29 +5,32 @@ CFLAGS = -Wall -pedantic -std=c99
 CC = gcc
 LIBS = -lm
 
-quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o
-	${CC} -o quadSolver quadSolver.o quadSolverRoots.o quadSolverSqrt.o ${LIBS}
+quadSolver: quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o
+	${CC} -o quadSolver quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o ${LIBS}
 
-all: quadSolver test
+all: quadSolver test log
 
 test: t1 t2
+	testing/t1
+	testing/t2
 
-t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o
-	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ${LIBS}
+t1: testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ../src/logging/logger.o
+	${CC} -o testing/t1 testing/t1.o quadSolverRoots.o quadSolverSqrt.o testing/cunit.o ../src/logging/logger.o ${LIBS}
 
 t2: testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o
-	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o ${LIBS}
+	${CC} -o testing/t2 testing/t2.o quadSolverRoots.o testing/cunit.o testing/mockQuadSolverSqrt.o ../src/logging/logger.o ${LIBS}
+
+log: ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o
+	${CC} -o ../src/logging/logger ../src/logging/logger.o quadSolver.o quadSolverRoots.o quadSolverSqrt.o ../src/logging/logger.o ${LIBS}
+	../src/logging/logger
 
 use:
-	./quadSolver 1 -3 -10
-	./quadSolver 1 -5 -6
-	./quadSolver 1 7 6
-	./quadSolver t3 g 5
-	./quadSolver 2 4 
-	./quadSolver
-	./quadSolver 32 4 1
+	./quadSolver < testing/in.txt > testing/out.txt
+	diff testing/out.txt testing/expectedOut.txt
+	./quadSolver < testing/in2.txt > testing/out2.txt
+	diff testing/out2.txt testing/expectedOut2.txt
 
-clean-all: clean clean-test
+clean-all: clean clean-test clean-log
 
 clean:
 	-rm -f ${EXES} core *.log *.o *.exe quadSolver *.tar
@@ -35,6 +38,10 @@ clean:
 clean-test:
 	-rm -f ${EXES} core testing/*.log testing/*.o testing/*.exe \
 	testing/t1 testing/t2 *.tar
+
+clean-log:
+	-rm -f ${EXES} core ../src/logging/*.log ../src/logging/*.o ../src/logging/*.exe \
+	../src/logging/logger *.tar ../src/log.txt
 
 PREFIX = /usr/local
 
@@ -50,7 +57,8 @@ uninstall:
 #Dependencies
 
 quadSolverSqrt.o: quadSolverSqrt.h
-quadSolverRoots.o: quadSolverRoots.h quadSolverSqrt.h
-quadSolver.o: quadSolverRoots.h
+quadSolverRoots.o: quadSolverRoots.h quadSolverSqrt.h ../src/logging/logger.h
+quadSolver.o: quadSolverRoots.h ../src/logging/logger.h
 testing/mockQuadSolverSqrt.o: testing/mockQuadSolverSqrt.h quadSolverSqrt.h
 testing/cunit.o: testing/cunit.h
+../src/logging/logger.o: ../src/logging/logger.h
