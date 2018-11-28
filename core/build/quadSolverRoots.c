@@ -9,6 +9,8 @@ Return: Integer referencing a specific error
 #include "quadSolverSqrt.h"
 #include "../src/logging/logger.h"
 
+// Receives struct Coef input and two double root pointers x1 x2
+// Returns -1 on complex numbers and 0 on successful find of roots
 int quadSolverRoots(Coef *input, double *x1, double *x2) {
 
 	double a = input->a;
@@ -19,6 +21,7 @@ int quadSolverRoots(Coef *input, double *x1, double *x2) {
 	double sqrtResult;
 	double d = b * b - 4 * a * c;
 
+	// Checks if numbers are complex
 	if(d < 0){
 	        fprintf(stderr, "Roots are complex numbers.\n");
 	        fprintf(stderr, "\nRoots of quadratic equation are: \n");
@@ -31,6 +34,7 @@ int quadSolverRoots(Coef *input, double *x1, double *x2) {
 		return -1;
 	}
 
+	// Computes quadratic equation
 	bSquared = b * b;
 
 	aMult = 4 * a * c;

@@ -1,3 +1,9 @@
+/*
+	t1.c
+	Testing driver 1
+	Checks for precision and rounding errors
+*/
+
 #include <stdlib.h>
 #include "cunit.h"
 #include "../quadSolverRoots.h"

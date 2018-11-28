@@ -1,3 +1,9 @@
+/*
+	t2.c
+	Testing driver 2
+	Uses mock object to check for relative error
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "cunit.h"
