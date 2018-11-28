@@ -1,16 +1,20 @@
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 2 4242
+[Tue Nov 27 20:53:26 2018] [quadSolver.c][line: 163] Initial user input error. Arguments: 4 2
 
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 2 4242
+[Tue Nov 27 20:53:26 2018] [quadSolver.c][line: 92] User input could not be validated: 4 2
 
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 4
+[Tue Nov 27 20:53:28 2018] [quadSolverRoots.c][line: 28] Roots are complex numbers: -0.048077, -0.190132
+[Tue Nov 27 20:53:28 2018] [quadSolverRoots.c][line: 29] Attempt to square root: -391.000000
+[Tue Nov 27 20:53:28 2018] [quadSolver.c][line: 135] x1 error: 49.000000, with input: 52 5 2
 
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 4
+[Tue Nov 27 20:53:28 2018] [quadSolver.c][line: 139] x2 error: 49.000000, with input: 52 5 2
 
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 2
+[Tue Nov 27 20:53:30 2018] [quadSolver.c][line: 163] Initial user input error. Arguments: r 12 2
 
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 2
+[Tue Nov 27 20:53:30 2018] [quadSolver.c][line: 92] User input could not be validated: r 12 2
 
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 162] Initial user input error. Arguments: 25
+[Tue Nov 27 20:53:31 2018] [quadSolverRoots.c][line: 28] Roots are complex numbers: -0.250000, -1.391941
+[Tue Nov 27 20:53:31 2018] [quadSolverRoots.c][line: 29] Attempt to square root: -31.000000
+[Tue Nov 27 20:53:31 2018] [quadSolver.c][line: 135] x1 error: 5.000000, with input: 2 1  4
 
-[Tue Nov 27 20:24:50 2018] [quadSolver.c][line: 92] User input could not be validated: 25
+[Tue Nov 27 20:53:31 2018] [quadSolver.c][line: 139] x2 error: 5.000000, with input: 2 1  4
 

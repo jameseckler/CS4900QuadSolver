@@ -143,9 +143,10 @@ int main(int argc, char *argv[]){
     success = 0;
     validated = 0;
 
-    free(linein.str);
 
     }
+
+    free(linein.str);
 
     return 0;
 
