@@ -1,0 +1,13 @@
+4.53 -6.1 1.0
+-3 -5 2
+1 5 8
+jim 2 4
+aj 8 3
+j 3 4j
+# 5 ^
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fjfjskf jsdkfjdksjf jsdfk s
+34 3 536 6 3
+-.42 .42..4 -42.
+quit
